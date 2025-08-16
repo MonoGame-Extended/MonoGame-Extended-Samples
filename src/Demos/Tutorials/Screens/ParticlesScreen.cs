@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended;
 using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Particles;
+using MonoGame.Extended.Particles.Data;
 using MonoGame.Extended.Particles.Modifiers;
 using MonoGame.Extended.Particles.Modifiers.Containers;
 using MonoGame.Extended.Particles.Modifiers.Interpolators;
@@ -92,37 +93,39 @@ namespace Tutorials.Demos
 
         private void ParticleInit(Texture2DRegion textureRegion)
         {
-            _particleEffect = new ParticleEffect()
+            _particleEffect = new ParticleEffect("Particle Effect")
             {
                 Position = new Vector2(400, 240),
                 Emitters = new List<ParticleEmitter>
                 {
-                    new ParticleEmitter(textureRegion, 500, TimeSpan.FromSeconds(2.5),
-                        Profile.Ring(150f, Profile.CircleRadiation.In))
+                    new ParticleEmitter(500)
                     {
-                        Parameters = new ParticleReleaseParameters
+                        TextureRegion = textureRegion,
+                        LifeSpan = 2.5f,
+                        Parameters = new ParticleReleaseParameters()
                         {
-                            Speed = new Range<float>(0f, 50f),
-                            Quantity = 3,
-                            Rotation = new Range<float>(-1f, 1f),
-                            Scale = new Range<float>(3.0f, 4.0f)
+                            Speed = new ParticleFloatParameter(0.0f, 50.0f),
+                            Quantity = new ParticleInt32Parameter(3),
+                            Rotation = new ParticleFloatParameter(-1.0f, 1.0f),
+                            Scale = new ParticleVector2Parameter(new Vector2(3.0f, 3.0f), new Vector2(4.0f, 4.0f))
                         },
-                        Modifiers =
+                        Profile = Profile.Ring(150.0f, CircleRadiation.In),
+                        Modifiers = new List<Modifier>()
                         {
-                            new AgeModifier
+                            new AgeModifier()
                             {
-                                Interpolators =
+                                Interpolators = new List<Interpolator>()
                                 {
-                                    new ColorInterpolator
+                                    new ColorInterpolator()
                                     {
-                                        StartValue = new HslColor(0.33f, 0.5f, 0.5f),
-                                        EndValue = new HslColor(0.5f, 0.9f, 1.0f)
+                                        StartValue = new Vector3(0.33f, 0.5f, 0.5f),
+                                        EndValue = new Vector3(0.5f, 0.9f, 1.0f)
                                     }
                                 }
                             },
-                            new RotationModifier {RotationRate = -2.1f},
-                            new RectangleContainerModifier {Width = 800, Height = 480},
-                            new LinearGravityModifier {Direction = -Vector2.UnitY, Strength = 30f}
+                            new RotationModifier() { RotationRate = -2.1f },
+                            new RectangleContainerModifier() { Width = 800, Height = 480 },
+                            new LinearGravityModifier() { Direction = -Vector2.UnitY, Strength = 30.0f }
                         }
                     }
                 }

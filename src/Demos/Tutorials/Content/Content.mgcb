@@ -405,11 +405,6 @@
 /processorParam:TextureFormat=Color
 /build:TiledMaps/alphacolortile.png
 
-#begin TiledMaps/free-tileset.json
-/importer:TexturePackerJsonImporter
-/processor:TexturePackerProcessor
-/build:TiledMaps/free-tileset.json
-
 #begin TiledMaps/free-tileset.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -38,9 +38,9 @@
     <ItemGroup>
         <PackageReference Include="Autofac" Version="8.3.0" />
         <PackageReference Include="Gum.MonoGame" Version="2025.5.13.1" />
-        <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.3" />
-        <PackageReference Include="MonoGame.Extended" Version="4.1.0" />
-        <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="4.1.0" />
-        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.3" />
+        <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4" />
+        <PackageReference Include="MonoGame.Extended" Version="5.0.1" />
+        <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="5.0.1" />
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4" />
     </ItemGroup>
 </Project>

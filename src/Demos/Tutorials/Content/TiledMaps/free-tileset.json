@@ -1,273 +1,105 @@
-{"frames": [
+{
+	"textures": [
+		{
+			"filename": "free-tileset.png",
+			"format": "RGBA8888",
+			"size": {"w":652,"h":782},
+			"frames": {
+				"01":{
+					"frame": {"x":2,"y":2,"w":128,"h":128}
+				},
+				"02":{
+					"frame": {"x":132,"y":2,"w":128,"h":128}
+				},
+				"03":{
+					"frame": {"x":262,"y":2,"w":128,"h":128}
+				},
+				"04":{
+					"frame": {"x":392,"y":2,"w":128,"h":128}
+				},
+				"05":{
+					"frame": {"x":522,"y":2,"w":128,"h":128}
+				},
+				"06":{
+					"frame": {"x":2,"y":132,"w":128,"h":128}
+				},
+				"07":{
+					"frame": {"x":132,"y":132,"w":128,"h":128}
+				},
+				"08":{
+					"frame": {"x":262,"y":132,"w":128,"h":128}
+				},
+				"09":{
+					"frame": {"x":392,"y":132,"w":128,"h":128}
+				},
+				"10":{
+					"frame": {"x":522,"y":132,"w":128,"h":128}
+				},
+				"11":{
+					"frame": {"x":2,"y":262,"w":128,"h":128}
+				},
+				"12":{
+					"frame": {"x":132,"y":262,"w":128,"h":128}
+				},
+				"13":{
+					"frame": {"x":262,"y":262,"w":128,"h":128}
+				},
+				"14":{
+					"frame": {"x":392,"y":262,"w":128,"h":128}
+				},
+				"15":{
+					"frame": {"x":522,"y":262,"w":128,"h":128}
+				},
+				"16":{
+					"frame": {"x":2,"y":392,"w":128,"h":128}
+				},
+				"17":{
+					"frame": {"x":132,"y":392,"w":128,"h":128}
+				},
+				"18":{
+					"frame": {"x":262,"y":392,"w":128,"h":128}
+				},
+				"Bush (1)":{
+					"frame": {"x":392,"y":392,"w":128,"h":128}
+				},
+				"Bush (2)":{
+					"frame": {"x":522,"y":392,"w":128,"h":128}
+				},
+				"Bush (3)":{
+					"frame": {"x":2,"y":522,"w":128,"h":128}
+				},
+				"Bush (4)":{
+					"frame": {"x":132,"y":522,"w":128,"h":128}
+				},
+				"Crate":{
+					"frame": {"x":262,"y":522,"w":128,"h":128}
+				},
+				"Mushroom_1":{
+					"frame": {"x":392,"y":522,"w":128,"h":128}
+				},
+				"Mushroom_2":{
+					"frame": {"x":522,"y":522,"w":128,"h":128}
+				},
+				"Sign_1":{
+					"frame": {"x":2,"y":652,"w":128,"h":128}
+				},
+				"Sign_2":{
+					"frame": {"x":132,"y":652,"w":128,"h":128}
+				},
+				"Stone":{
+					"frame": {"x":262,"y":652,"w":128,"h":128}
+				},
+				"tree_1":{
+					"frame": {"x":392,"y":652,"w":128,"h":128}
+				}
+			}
+		}
+	],
 
-{
-	"filename": "01.png",
-	"frame": {"x":2,"y":2,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "02.png",
-	"frame": {"x":132,"y":2,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "03.png",
-	"frame": {"x":262,"y":2,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "04.png",
-	"frame": {"x":392,"y":2,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "05.png",
-	"frame": {"x":522,"y":2,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "06.png",
-	"frame": {"x":2,"y":132,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "07.png",
-	"frame": {"x":132,"y":132,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "08.png",
-	"frame": {"x":262,"y":132,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "09.png",
-	"frame": {"x":392,"y":132,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "10.png",
-	"frame": {"x":522,"y":132,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "11.png",
-	"frame": {"x":2,"y":262,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "12.png",
-	"frame": {"x":132,"y":262,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "13.png",
-	"frame": {"x":262,"y":262,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "14.png",
-	"frame": {"x":392,"y":262,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "15.png",
-	"frame": {"x":522,"y":262,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "16.png",
-	"frame": {"x":2,"y":392,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "17.png",
-	"frame": {"x":132,"y":392,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "18.png",
-	"frame": {"x":262,"y":392,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Bush (1).png",
-	"frame": {"x":392,"y":392,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Bush (2).png",
-	"frame": {"x":522,"y":392,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Bush (3).png",
-	"frame": {"x":2,"y":522,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Bush (4).png",
-	"frame": {"x":132,"y":522,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Crate.png",
-	"frame": {"x":262,"y":522,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Mushroom_1.png",
-	"frame": {"x":392,"y":522,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Mushroom_2.png",
-	"frame": {"x":522,"y":522,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Sign_1.png",
-	"frame": {"x":2,"y":652,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Sign_2.png",
-	"frame": {"x":132,"y":652,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Stone.png",
-	"frame": {"x":262,"y":652,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-},
-{
-	"filename": "Tree_1.png",
-	"frame": {"x":392,"y":652,"w":128,"h":128},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-	"sourceSize": {"w":128,"h":128},
-	"pivot": {"x":0.5,"y":0.5}
-}],
-"meta": {
-	"app": "http://www.codeandweb.com/texturepacker",
-	"version": "1.0",
-	"image": "free-tileset.png",
-	"format": "RGBA8888",
-	"size": {"w":652,"h":782},
-	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:39b13967ca702249dc7ce17310967232:7bb9e6bc237666261ae17a0ebbb180e8:9bad6558fefc9df9a0ed5df02961a143$"
-}
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"dataformat": "monogame-extended",
+		"version": "1.2",
+		"smartupdate": "$TexturePacker:SmartUpdate:db3ac3ad4d5592a279d3f50ec9972ada:a265c13cb7c3213ca3e87505c0369a16:c2ff3230bebfb7414860e6b7fd5a5398$"
+	}
 }
