@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 using MonoGame.Extended.Screens;
 using MonoGame.Extended.ViewportAdapters;
+using MonoGameGum;
 using MonoGameGum.Forms;
 using MonoGameGum.Forms.Controls;
 using RenderingLibrary;
@@ -21,6 +22,8 @@ namespace Tutorials
         private ScreenName _currentScreen;
 
         public ViewportAdapter ViewportAdapter { get; private set; }
+
+        public GumService GumUI => GumService.Default;
 
         public GameMain(PlatformConfig config)
         {
@@ -45,13 +48,10 @@ namespace Tutorials
         protected override void Initialize()
         {
             //  Initialize GUM UI System
-            SystemManagers.Default = new SystemManagers();
-            SystemManagers.Default.Initialize(_graphicsDeviceManager.GraphicsDevice, fullInstantiation: true);
-            FormsUtilities.InitializeDefaults();
-            FrameworkElement.DefaultFormsComponents[typeof(Button)] = typeof(DemoButton);
+            GumUI.Initialize(this, DefaultVisualsVersion.V2);
 
             //  Initialize demos screens
-            _screens.Add(ScreenName.Animation, null);
+            _screens.Add(ScreenName.Animation, new AnimationScreen(this));
             _screens.Add(ScreenName.Batching, new BatchingScreen(this));
             _screens.Add(ScreenName.BitmapFonts, new BitmapFontsScreen(this));
             _screens.Add(ScreenName.Camera, new CameraScreen(this));

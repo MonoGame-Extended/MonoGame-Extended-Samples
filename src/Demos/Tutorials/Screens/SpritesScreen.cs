@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended;
+using MonoGame.Extended.BitmapFonts;
 using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Screens;
 
@@ -19,6 +20,8 @@ namespace Tutorials.Screens
         private Sprite _spikeyBallSprite;
         private SpriteBatch _spriteBatch;
 
+        private BitmapFont _bitmapFont;
+
         private NinePatch _clippingTextureRegion;
 
         public new GameMain Game => (GameMain)base.Game;
@@ -28,6 +31,8 @@ namespace Tutorials.Screens
         public override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            _bitmapFont = Content.Load<BitmapFont>("Fonts/montserrat-32");
 
             _backgroundTexture = Content.Load<Texture2D>("Textures/bg_sharbi");
 
@@ -126,6 +131,10 @@ namespace Tutorials.Screens
             _spriteBatch.DrawRectangle(_clippingRectangle.ToRectangleF(), Color.White);
 
             _spriteBatch.Draw(_apple, new Vector2(100, 100));
+
+            _spriteBatch.DrawString(_bitmapFont, "Left-Click to Drag the white viewing rect", new Vector2(200, 16), Color.White);
+            _spriteBatch.DrawString(_bitmapFont, "Right-click and Drag to Resize it", new Vector2(200, 40), Color.White);
+            _spriteBatch.DrawString(_bitmapFont, "Press ESC to go back.", new Vector2(200, 64), Color.White);
 
             _spriteBatch.End();
 

@@ -130,6 +130,7 @@ namespace Tutorials.Screens
             stringBuilder.AppendLine($"WASD: Move [{_camera.Position.X:0}, {_camera.Position.Y:0}]");
             stringBuilder.AppendLine($"EQ: Rotate [{MathHelper.ToDegrees(_camera.Rotation):0.00}]");
             stringBuilder.AppendLine($"RF: Zoom [{_camera.Zoom:0.00}]");
+            stringBuilder.AppendLine("ESC: Go back to main menu");
             stringBuilder.AppendLine($"World Pos: [{_worldPosition.X:0}, {_worldPosition.Y:0}]");
             stringBuilder.AppendLine($"Bounds: [{rectangle.X:0}, {rectangle.Y:0}, {rectangle.Width:0}, {rectangle.Height:0}]");
 

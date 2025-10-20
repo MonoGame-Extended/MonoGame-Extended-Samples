@@ -71,6 +71,7 @@ namespace Tutorials.Demos
             };
 
             LogMessage("Do something with the mouse or keyboard...");
+            LogMessage("Press ESC to go back");
 
             base.Initialize();
         }

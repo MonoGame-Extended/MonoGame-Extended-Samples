@@ -128,7 +128,7 @@ namespace Tutorials.Screens
             _spriteBatch.End();
 
             _spriteBatch.Begin(blendState: BlendState.AlphaBlend);
-            _spriteBatch.DrawString(_bitmapFont, "Use W,A,S,D to move.", new Vector2(5, 5), Color.DarkBlue);
+            _spriteBatch.DrawString(_bitmapFont, "Use W,A,S,D to move, ESC to go back.", new Vector2(5, 5), Color.DarkBlue);
             _spriteBatch.End();
         }
     }

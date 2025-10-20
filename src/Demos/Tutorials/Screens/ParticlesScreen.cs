@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended;
+using MonoGame.Extended.BitmapFonts;
 using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Particles;
 using MonoGame.Extended.Particles.Data;
@@ -26,6 +27,8 @@ namespace Tutorials.Demos
         private ParticleEffect _particleEffect;
         private Texture2D _particleTexture;
 
+        private BitmapFont _bitmapFont;
+
         public new GameMain Game => (GameMain)base.Game;
 
         public ParticlesScreen(GameMain game) : base(game){ }
@@ -37,6 +40,8 @@ namespace Tutorials.Demos
 
             var viewportAdapter = new BoxingViewportAdapter(Game.Window, GraphicsDevice, 800, 480);
             _camera = new OrthographicCamera(viewportAdapter);
+
+            _bitmapFont = Content.Load<BitmapFont>("Fonts/montserrat-32");
 
             var logoTexture = Content.Load<Texture2D>("Textures/logo-square-128");
             _sprite = new Sprite(logoTexture);
@@ -88,6 +93,7 @@ namespace Tutorials.Demos
             _spriteBatch.Begin(blendState: BlendState.AlphaBlend, transformMatrix: _camera.GetViewMatrix());
             _spriteBatch.Draw(_particleEffect);
             _spriteBatch.Draw(_sprite, _transform.Position, _transform.Rotation, _transform.Scale);
+            _spriteBatch.DrawString(_bitmapFont, "Click to spawn Particles, Press ESC to go back.", new Vector2(5, 5), Color.DarkBlue);
             _spriteBatch.End();
         }
 

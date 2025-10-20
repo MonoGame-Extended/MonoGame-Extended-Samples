@@ -3,13 +3,13 @@
 // See LICENSE file in the project root for full license information.
 
 using System;
+using Gum.Forms.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Screens;
 using MonoGame.Extended.ViewportAdapters;
-using MonoGameGum.Forms;
-using MonoGameGum.Forms.Controls;
+using MonoGameGum;
 using MonoGameGum.GueDeriving;
 using RenderingLibrary;
 
@@ -41,7 +41,7 @@ public class MainMenuScreen : GameScreen
             AutoGridVerticalCells = 3,
             WrapsChildren = true
         };
-        _menu.AddToManagers();
+        _menu.AddToRoot();
 
         foreach (var screen in (ScreenName[])Enum.GetValues<ScreenName>())
         {
@@ -71,14 +71,16 @@ public class MainMenuScreen : GameScreen
     }
     public override void Update(GameTime gameTime)
     {
-        FormsUtilities.Update(gameTime, _menu);
-        SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
+        Game.GumUI.Update(gameTime);
+        //FormsUtilities.Update(gameTime, _menu);
+       // SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
     }
 
     public override void Draw(GameTime gameTime)
     {
         float scaleFactor = _viewportAdapter.GetScaleMatrix().M11;
-        SystemManagers.Default.Renderer.Camera.Zoom = scaleFactor;
-        SystemManagers.Default.Draw();
+        Game.GumUI.Draw();
+        //SystemManagers.Default.Renderer.Camera.Zoom = scaleFactor;
+        //SystemManagers.Default.Draw();
     }
 }

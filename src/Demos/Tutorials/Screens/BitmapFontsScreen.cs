@@ -142,6 +142,11 @@ namespace Tutorials.Screens
 
             _spriteBatch.DrawString(_bitmapFontMonospaced, "Hello Monospaced Fonts!", new Vector2(100, 400), Color.White);
 
+            // Add instructions for the user
+            _spriteBatch.DrawString(_bitmapFontMonospaced, "Left-Click to Drag the white viewing rectangle", new Vector2(16, 16), Color.White);
+            _spriteBatch.DrawString(_bitmapFontMonospaced, "Right-click and Drag to Resize it", new Vector2(16, 40), Color.White);
+            _spriteBatch.DrawString(_bitmapFontMonospaced, "ESC to go back", new Vector2(16, 64), Color.White);
+
             _spriteBatch.End();
         }
     }

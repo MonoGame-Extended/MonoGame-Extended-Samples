@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoGame.Extended.BitmapFonts;
 using MonoGame.Extended.Screens;
 using MonoGame.Extended.Shapes;
 using MonoGame.Extended.VectorDraw;
@@ -13,6 +14,9 @@ namespace Tutorials.Screens
         PrimitiveBatch _primitiveBatch;
         private Matrix _localProjection;
         private Matrix _localView;
+
+        private SpriteBatch _spriteBatch;
+        private BitmapFont _bitmapFont;
 
         public new GameMain Game => (GameMain)base.Game;
 
@@ -34,6 +38,9 @@ namespace Tutorials.Screens
             _primitiveDrawing = new PrimitiveDrawing(_primitiveBatch);
             _localProjection = Matrix.CreateOrthographicOffCenter(0f, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, 0f, 0f, 1f);
             _localView = Matrix.Identity;
+
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            _bitmapFont = Content.Load<BitmapFont>("Fonts/montserrat-32");
         }
 
         public override void Update(GameTime gameTime)
@@ -70,6 +77,10 @@ namespace Tutorials.Screens
             _primitiveDrawing.DrawSolidPolygon(new Vector2(420, 120), _polygon.Vertices, Color.Aqua);
 
             _primitiveBatch.End();
+
+            _spriteBatch.Begin();
+            _spriteBatch.DrawString(_bitmapFont, " Press ESC to go back.", new Vector2(5, GraphicsDevice.Viewport.Height - 40), Color.DarkBlue);
+            _spriteBatch.End();
         }
     }
 }
