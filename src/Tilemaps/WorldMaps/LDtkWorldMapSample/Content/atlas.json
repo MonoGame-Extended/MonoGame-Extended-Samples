@@ -1,0 +1,1548 @@
+{
+  "meta": {
+    "version": "1.0",
+    "app": "https://github.com/aristurtledev/zephyr",
+    "image": "atlas.png",
+    "size": {
+      "w": 512,
+      "h": 1024
+    },
+    "format": "RGBA8"
+  },
+  "frames": [
+    {
+      "filename": "tileset.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 400,
+        "h": 368
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "back.png",
+      "frame": {
+        "x": 0,
+        "y": 368,
+        "w": 384,
+        "h": 240
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "middle.png",
+      "frame": {
+        "x": 0,
+        "y": 608,
+        "w": 176,
+        "h": 368
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "instructions.png",
+      "frame": {
+        "x": 176,
+        "y": 616,
+        "w": 284,
+        "h": 168
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "tree.png",
+      "frame": {
+        "x": 400,
+        "y": 3,
+        "w": 105,
+        "h": 93
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "house.png",
+      "frame": {
+        "x": 400,
+        "y": 100,
+        "w": 87,
+        "h": 108
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "title-screen.png",
+      "frame": {
+        "x": 0,
+        "y": 986,
+        "w": 194,
+        "h": 38
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "loading.png",
+      "frame": {
+        "x": 176,
+        "y": 796,
+        "w": 320,
+        "h": 20
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "credits-text.png",
+      "frame": {
+        "x": 208,
+        "y": 816,
+        "w": 186,
+        "h": 16
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "eagle-attack-1.png",
+      "frame": {
+        "x": 464,
+        "y": 215,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 20.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "eagle-attack-2.png",
+      "frame": {
+        "x": 464,
+        "y": 263,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 20.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "eagle-attack-3.png",
+      "frame": {
+        "x": 464,
+        "y": 311,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 20.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "eagle-attack-4.png",
+      "frame": {
+        "x": 464,
+        "y": 359,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 20.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "enemy-death-1.png",
+      "frame": {
+        "x": 464,
+        "y": 407,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "enemy-death-2.png",
+      "frame": {
+        "x": 464,
+        "y": 455,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "enemy-death-3.png",
+      "frame": {
+        "x": 464,
+        "y": 503,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "enemy-death-4.png",
+      "frame": {
+        "x": 464,
+        "y": 551,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "enemy-death-5.png",
+      "frame": {
+        "x": 464,
+        "y": 599,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "enemy-death-6.png",
+      "frame": {
+        "x": 464,
+        "y": 647,
+        "w": 40,
+        "h": 41
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "bush.png",
+      "frame": {
+        "x": 464,
+        "y": 692,
+        "w": 46,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "frog-idle-1.png",
+      "frame": {
+        "x": 464,
+        "y": 720,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "frog-idle-2.png",
+      "frame": {
+        "x": 464,
+        "y": 752,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "frog-idle-3.png",
+      "frame": {
+        "x": 400,
+        "y": 208,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "frog-idle-4.png",
+      "frame": {
+        "x": 400,
+        "y": 240,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "frog-jump-1.png",
+      "frame": {
+        "x": 400,
+        "y": 272,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "frog-jump-2.png",
+      "frame": {
+        "x": 400,
+        "y": 304,
+        "w": 35,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 11.0,
+          "w": 16.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-crouch-1.png",
+      "frame": {
+        "x": 400,
+        "y": 336,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-crouch-2.png",
+      "frame": {
+        "x": 384,
+        "y": 368,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-hurt-1.png",
+      "frame": {
+        "x": 384,
+        "y": 400,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-hurt-2.png",
+      "frame": {
+        "x": 384,
+        "y": 432,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-idle-1.png",
+      "frame": {
+        "x": 384,
+        "y": 464,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-idle-2.png",
+      "frame": {
+        "x": 384,
+        "y": 496,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-idle-3.png",
+      "frame": {
+        "x": 384,
+        "y": 528,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-idle-4.png",
+      "frame": {
+        "x": 384,
+        "y": 560,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-jump-1.png",
+      "frame": {
+        "x": 400,
+        "y": 816,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-jump-2.png",
+      "frame": {
+        "x": 448,
+        "y": 816,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "lookUp.png",
+      "frame": {
+        "x": 176,
+        "y": 848,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-1.png",
+      "frame": {
+        "x": 176,
+        "y": 880,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-2.png",
+      "frame": {
+        "x": 176,
+        "y": 912,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-3.png",
+      "frame": {
+        "x": 176,
+        "y": 944,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-4.png",
+      "frame": {
+        "x": 208,
+        "y": 976,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-5.png",
+      "frame": {
+        "x": 224,
+        "y": 848,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "player-run-6.png",
+      "frame": {
+        "x": 224,
+        "y": 880,
+        "w": 33,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 16.0,
+          "w": 12.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "item-feedback-1.png",
+      "frame": {
+        "x": 224,
+        "y": 912,
+        "w": 32,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "item-feedback-2.png",
+      "frame": {
+        "x": 224,
+        "y": 944,
+        "w": 32,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "item-feedback-3.png",
+      "frame": {
+        "x": 256,
+        "y": 976,
+        "w": 32,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "item-feedback-4.png",
+      "frame": {
+        "x": 256,
+        "y": 912,
+        "w": 32,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "face-block.png",
+      "frame": {
+        "x": 256,
+        "y": 944,
+        "w": 32,
+        "h": 32
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "opossum-1.png",
+      "frame": {
+        "x": 272,
+        "y": 852,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "opossum-2.png",
+      "frame": {
+        "x": 272,
+        "y": 884,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "opossum-3.png",
+      "frame": {
+        "x": 320,
+        "y": 836,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "opossum-4.png",
+      "frame": {
+        "x": 288,
+        "y": 916,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "opossum-5.png",
+      "frame": {
+        "x": 320,
+        "y": 868,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "opossum-6.png",
+      "frame": {
+        "x": 288,
+        "y": 948,
+        "w": 36,
+        "h": 28
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 8.0,
+          "y": 15.0,
+          "w": 16.0,
+          "h": 13.0
+        }
+      }
+    },
+    {
+      "filename": "press-enter-text.png",
+      "frame": {
+        "x": 384,
+        "y": 596,
+        "w": 76,
+        "h": 12
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "cherry-1.png",
+      "frame": {
+        "x": 368,
+        "y": 843,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 0.0,
+          "y": 3.0,
+          "w": 17.0,
+          "h": 15.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-2.png",
+      "frame": {
+        "x": 432,
+        "y": 379,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 3.0,
+          "w": 17.0,
+          "h": 15.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-3.png",
+      "frame": {
+        "x": 432,
+        "y": 411,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 2.0,
+          "y": 3.0,
+          "w": 15.0,
+          "h": 15.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-4.png",
+      "frame": {
+        "x": 432,
+        "y": 443,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 4.0,
+          "y": 2.0,
+          "w": 14.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-5.png",
+      "frame": {
+        "x": 432,
+        "y": 475,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 5.0,
+          "y": 2.0,
+          "w": 14.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-6.png",
+      "frame": {
+        "x": 432,
+        "y": 507,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 4.0,
+          "y": 2.0,
+          "w": 14.0,
+          "h": 16.0
+        }
+      }
+    },
+    {
+      "filename": "cherry-7.png",
+      "frame": {
+        "x": 432,
+        "y": 539,
+        "w": 21,
+        "h": 21
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 2.0,
+          "y": 3.0,
+          "w": 15.0,
+          "h": 15.0
+        }
+      }
+    },
+    {
+      "filename": "sign.png",
+      "frame": {
+        "x": 176,
+        "y": 828,
+        "w": 18,
+        "h": 20
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "shrooms.png",
+      "frame": {
+        "x": 208,
+        "y": 833,
+        "w": 16,
+        "h": 15
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    },
+    {
+      "filename": "gem-1.png",
+      "frame": {
+        "x": 224,
+        "y": 835,
+        "w": 15,
+        "h": 13
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 1.0,
+          "w": 13.0,
+          "h": 11.0
+        }
+      }
+    },
+    {
+      "filename": "gem-2.png",
+      "frame": {
+        "x": 240,
+        "y": 835,
+        "w": 15,
+        "h": 13
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 1.0,
+          "w": 13.0,
+          "h": 11.0
+        }
+      }
+    },
+    {
+      "filename": "gem-3.png",
+      "frame": {
+        "x": 256,
+        "y": 835,
+        "w": 15,
+        "h": 13
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 1.0,
+          "w": 13.0,
+          "h": 11.0
+        }
+      }
+    },
+    {
+      "filename": "gem-4.png",
+      "frame": {
+        "x": 272,
+        "y": 835,
+        "w": 15,
+        "h": 13
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 1.0,
+          "w": 13.0,
+          "h": 11.0
+        }
+      }
+    },
+    {
+      "filename": "gem-5.png",
+      "frame": {
+        "x": 288,
+        "y": 835,
+        "w": 15,
+        "h": 13
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": true,
+      "hitbox": {
+        "Rectangle": {
+          "x": 1.0,
+          "y": 1.0,
+          "w": 13.0,
+          "h": 11.0
+        }
+      }
+    },
+    {
+      "filename": "skulls.png",
+      "frame": {
+        "x": 496,
+        "y": 102,
+        "w": 16,
+        "h": 10
+      },
+      "trimmed": false,
+      "pivot_enabled": false,
+      "hitbox_enabled": false
+    }
+  ],
+  "animations": [
+    {
+      "name": "cherry",
+      "frames": [
+        {
+          "sprite_name": "cherry-1.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-2.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-3.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-4.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-5.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-6.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "cherry-7.png",
+          "delay_ms": 83
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "eagle-attack",
+      "frames": [
+        {
+          "sprite_name": "eagle-attack-1.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "eagle-attack-2.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "eagle-attack-3.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "eagle-attack-4.png",
+          "delay_ms": 83
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "frog-idle",
+      "frames": [
+        {
+          "sprite_name": "frog-idle-1.png",
+          "delay_ms": 167
+        },
+        {
+          "sprite_name": "frog-idle-2.png",
+          "delay_ms": 167
+        },
+        {
+          "sprite_name": "frog-idle-3.png",
+          "delay_ms": 167
+        },
+        {
+          "sprite_name": "frog-idle-4.png",
+          "delay_ms": 167
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "frog-jump",
+      "frames": [
+        {
+          "sprite_name": "frog-jump-1.png",
+          "delay_ms": 167
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "frog-fall",
+      "frames": [
+        {
+          "sprite_name": "frog-jump-2.png",
+          "delay_ms": 167
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "opossum",
+      "frames": [
+        {
+          "sprite_name": "opossum-1.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "opossum-2.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "opossum-3.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "opossum-4.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "opossum-5.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "opossum-6.png",
+          "delay_ms": 83
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "enemy-death",
+      "frames": [
+        {
+          "sprite_name": "enemy-death-1.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "enemy-death-2.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "enemy-death-3.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "enemy-death-4.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "enemy-death-5.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "enemy-death-6.png",
+          "delay_ms": 63
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "gem",
+      "frames": [
+        {
+          "sprite_name": "gem-1.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "gem-2.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "gem-3.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "gem-4.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "gem-5.png",
+          "delay_ms": 83
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "item-feedback",
+      "frames": [
+        {
+          "sprite_name": "item-feedback-1.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "item-feedback-2.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "item-feedback-3.png",
+          "delay_ms": 63
+        },
+        {
+          "sprite_name": "item-feedback-4.png",
+          "delay_ms": 63
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "player-foxy-crouch",
+      "frames": [
+        {
+          "sprite_name": "player-crouch-1.png",
+          "delay_ms": 100
+        },
+        {
+          "sprite_name": "player-crouch-2.png",
+          "delay_ms": 100
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "player-foxy-hurt",
+      "frames": [
+        {
+          "sprite_name": "player-hurt-1.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-hurt-2.png",
+          "delay_ms": 67
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "player-foxy-idle",
+      "frames": [
+        {
+          "sprite_name": "player-idle-1.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "player-idle-2.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "player-idle-3.png",
+          "delay_ms": 83
+        },
+        {
+          "sprite_name": "player-idle-4.png",
+          "delay_ms": 83
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "player-foxy-jump",
+      "frames": [
+        {
+          "sprite_name": "player-jump-1.png",
+          "delay_ms": 100
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "player-foxy-fall",
+      "frames": [
+        {
+          "sprite_name": "player-jump-2.png",
+          "delay_ms": 100
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": false
+    },
+    {
+      "name": "player-foxy-lookup",
+      "frames": [
+        {
+          "sprite_name": "lookUp.png",
+          "delay_ms": 100
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    },
+    {
+      "name": "player-foxy-run",
+      "frames": [
+        {
+          "sprite_name": "player-run-1.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-run-2.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-run-3.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-run-4.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-run-5.png",
+          "delay_ms": 67
+        },
+        {
+          "sprite_name": "player-run-6.png",
+          "delay_ms": 67
+        }
+      ],
+      "direction": "Forward",
+      "loop_enabled": true
+    }
+  ]
+}
