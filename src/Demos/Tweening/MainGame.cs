@@ -118,7 +118,7 @@ namespace Tweening
             _spriteBatch.FillRectangle(Back.X, Back.Y, Size.X, Size.X, Color.Purple);
             _spriteBatch.FillRectangle(Elastic.X, Elastic.Y, Size.X, Size.X, Color.Yellow);
 
-            _spriteBatch.DrawString(_bitmapFont, $"{_tweener.AllocationCount}", Vector2.One, Color.WhiteSmoke);
+            _spriteBatch.DrawString(_bitmapFont, $"{_tweener.ActiveTweens.Length}", Vector2.One, Color.WhiteSmoke);
 
             _spriteBatch.End();
 

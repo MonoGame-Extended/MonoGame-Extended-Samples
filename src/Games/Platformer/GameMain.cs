@@ -1,105 +1,76 @@
-﻿using Autofac;
+using Autofac;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.ECS;
 using MonoGame.Extended.Input;
-using MonoGame.Extended.Tiled;
-using MonoGame.Extended.Tiled.Renderers;
+using MonoGame.Extended.Tilemaps;
+using MonoGame.Extended.Tilemaps.Rendering;
 using Platformer.Systems;
 
-namespace Platformer
+namespace Platformer;
+
+public class GameMain : GameBase
 {
-    public class GameMain : GameBase
+    private Tilemap _map = null!;
+    private TilemapRenderer _renderer = null!;
+    private EntityFactory _entityFactory = null!;
+    private OrthographicCamera _camera = null!;
+    private World _world = null!;
+
+    protected override void RegisterDependencies(ContainerBuilder builder)
     {
-        private TiledMap _map;
-        private TiledMapRenderer _renderer;
-        private EntityFactory _entityFactory;
-        private OrthographicCamera _camera;
-        private World _world;
+        _camera = new OrthographicCamera(GraphicsDevice);
 
-        public GameMain()
+        builder.RegisterInstance(new SpriteBatch(GraphicsDevice));
+        builder.RegisterInstance(_camera);
+    }
+
+    protected override void LoadContent()
+    {
+        _world = new WorldBuilder()
+            .AddSystem(new WorldSystem())
+            .AddSystem(new PlayerSystem())
+            .AddSystem(new EnemySystem())
+            .AddSystem(new RenderSystem(new SpriteBatch(GraphicsDevice), _camera))
+            .Build();
+
+        Components.Add(_world);
+
+        _entityFactory = new EntityFactory(_world, Content);
+        _map = Content.Load<Tilemap>("test-map");
+        _renderer = new TilemapRenderer(GraphicsDevice);
+        _renderer.LoadTilemap(_map);
+
+        foreach (TilemapTileLayer tileLayer in _map.Layers.GetLayers<TilemapTileLayer>())
         {
-        }
-
-        protected override void RegisterDependencies(ContainerBuilder builder)
-        {
-            _camera = new OrthographicCamera(GraphicsDevice);
-
-            builder.RegisterInstance(new SpriteBatch(GraphicsDevice));
-            builder.RegisterInstance(_camera);
-        }
-
-        protected override void LoadContent()
-        {
-            _world = new WorldBuilder()
-                .AddSystem(new WorldSystem())
-                .AddSystem(new PlayerSystem())
-                .AddSystem(new EnemySystem())
-                .AddSystem(new RenderSystem(new SpriteBatch(GraphicsDevice), _camera))
-                .Build();
-
-            Components.Add(_world);
-
-            _entityFactory = new EntityFactory(_world, Content);
-
-            // TOOD: Load maps and collision data more nicely :)
-            _map = Content.Load<TiledMap>("test-map");
-            _renderer = new TiledMapRenderer(GraphicsDevice, _map);
-
-            foreach (var tileLayer in _map.TileLayers)
+            foreach (TilemapTileEntry tileEntry in tileLayer.GetTiles())
             {
-                for (var x = 0; x < tileLayer.Width; x++)
+                if (tileEntry.Tile.GlobalId == 1)
                 {
-                    for (var y = 0; y < tileLayer.Height; y++)
-                    {
-                        var tile = tileLayer.GetTile((ushort)x, (ushort)y);
-
-                        if (tile.GlobalIdentifier == 1)
-                        {
-                            var tileWidth = _map.TileWidth;
-                            var tileHeight = _map.TileHeight;
-                            _entityFactory.CreateTile(x, y, tileWidth, tileHeight);
-                        }
-                    }
+                    _entityFactory.CreateTile(tileEntry.X, tileEntry.Y, _map.TileWidth, _map.TileHeight);
                 }
             }
-
-            _entityFactory.CreateBlue(new Vector2(600, 240));
-            _entityFactory.CreateBlue(new Vector2(700, 100));
-            _entityFactory.CreatePlayer(new Vector2(100, 240));
         }
 
-        protected override void Update(GameTime gameTime)
-        {
-            // TODO: Using global shared input state is really bad!
+        _entityFactory.CreateBlue(new Vector2(600, 240));
+        _entityFactory.CreateBlue(new Vector2(700, 100));
+        _entityFactory.CreatePlayer(new Vector2(100, 240));
+    }
 
-            KeyboardExtended.Update();
-            MouseExtended.Update();
+    protected override void Update(GameTime gameTime)
+    {
+        KeyboardExtended.Update();
+        MouseExtended.Update();
 
-            //var keyboardState = KeyboardExtended.GetState();
+        base.Update(gameTime);
+    }
 
-            //if (keyboardState.IsKeyDown(Keys.Escape))
-            //    Exit();
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.Black);
+        _renderer.Draw(_camera);
 
-            _renderer.Update(gameTime);
-            //_camera.LookAt(_playerEntity.Get<Transform2>().Position);
-
-            //_world.Update(gameTime);
-
-            
-
-            base.Update(gameTime);
-        }
-
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.Black);
-
-            _renderer.Draw(_camera.GetViewMatrix());
-            //_world.Draw(gameTime);
-
-            base.Draw(gameTime);
-        }
+        base.Draw(gameTime);
     }
 }

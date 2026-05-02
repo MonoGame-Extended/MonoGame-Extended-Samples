@@ -1,12 +1,8 @@
-﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using MonoGame.Extended;
 using MonoGame.Extended.Screens;
 using MonoGame.Extended.ViewportAdapters;
 using MonoGameGum;
-using MonoGameGum.Forms;
-using MonoGameGum.Forms.Controls;
-using RenderingLibrary;
 using Tutorials.Demos;
 using Tutorials.Screens;
 
@@ -16,8 +12,6 @@ namespace Tutorials
     {
         private readonly GraphicsDeviceManager _graphicsDeviceManager;
         private readonly FramesPerSecondCounter _fpsCounter = new FramesPerSecondCounter();
-        private readonly Dictionary<ScreenName, GameScreen> _screens = new Dictionary<ScreenName, GameScreen>();
-
         private readonly ScreenManager _screenManager;
         private ScreenName _currentScreen;
 
@@ -47,23 +41,7 @@ namespace Tutorials
 
         protected override void Initialize()
         {
-            //  Initialize GUM UI System
-            GumUI.Initialize(this, DefaultVisualsVersion.V2);
-
-            //  Initialize demos screens
-            _screens.Add(ScreenName.Animation, new AnimationScreen(this));
-            _screens.Add(ScreenName.Batching, new BatchingScreen(this));
-            _screens.Add(ScreenName.BitmapFonts, new BitmapFontsScreen(this));
-            _screens.Add(ScreenName.Camera, new CameraScreen(this));
-            _screens.Add(ScreenName.Collision, new CollisionScreen(this));
-            _screens.Add(ScreenName.InputListener, new InputListenersScreen(this));
-            _screens.Add(ScreenName.MainMenu, new MainMenuScreen(this));
-            _screens.Add(ScreenName.Particles, new ParticlesScreen(this));
-            _screens.Add(ScreenName.Shapes, new ShapesScreen(this));
-            _screens.Add(ScreenName.Sprites, new SpritesScreen(this));
-            _screens.Add(ScreenName.TiledMaps, new TiledMapsScreen(this));
-            _screens.Add(ScreenName.ViewportAdapter, new ViewportAdaptersScreen(this));
-
+            GumUI.Initialize(this);
             base.Initialize();
         }
 
@@ -76,7 +54,17 @@ namespace Tutorials
         public void LoadScreen(ScreenName screen)
         {
             IsMouseVisible = true;
-            _screenManager.LoadScreen(_screens[screen]);
+            GameScreen nextScreen = CreateScreen(screen);
+
+            if (_screenManager.ActiveScreen == null)
+            {
+                _screenManager.ShowScreen(nextScreen);
+            }
+            else
+            {
+                _screenManager.ReplaceScreen(nextScreen);
+            }
+
             _currentScreen = screen;
         }
 
@@ -92,6 +80,39 @@ namespace Tutorials
             _fpsCounter.Draw(gameTime);
             Window.Title = $"{_currentScreen} {_fpsCounter.FramesPerSecond}";
             base.Draw(gameTime);
+        }
+
+        private GameScreen CreateScreen(ScreenName screen)
+        {
+            switch (screen)
+            {
+                case ScreenName.Animation:
+                    return new AnimationScreen(this);
+                case ScreenName.Batching:
+                    return new BatchingScreen(this);
+                case ScreenName.BitmapFonts:
+                    return new BitmapFontsScreen(this);
+                case ScreenName.Camera:
+                    return new CameraScreen(this);
+                case ScreenName.Collision:
+                    return new CollisionScreen(this);
+                case ScreenName.InputListener:
+                    return new InputListenersScreen(this);
+                case ScreenName.MainMenu:
+                    return new MainMenuScreen(this);
+                case ScreenName.Particles:
+                    return new ParticlesScreen(this);
+                case ScreenName.Shapes:
+                    return new ShapesScreen(this);
+                case ScreenName.Sprites:
+                    return new SpritesScreen(this);
+                case ScreenName.TiledMaps:
+                    return new TiledMapsScreen(this);
+                case ScreenName.ViewportAdapter:
+                    return new ViewportAdaptersScreen(this);
+                default:
+                    throw new System.ArgumentOutOfRangeException(nameof(screen), screen, null);
+            }
         }
     }
 }

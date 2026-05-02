@@ -1,103 +1,112 @@
-﻿// Copyright (c) Craftwork Games. All rights reserved.
+// Copyright (c) Craftwork Games. All rights reserved.
 // Licensed under the MIT license.
 // See LICENSE file in the project root for full license information.
 
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using MonoGame.Extended.Collisions;
 using MonoGame.Extended;
+using MonoGame.Extended.Collisions;
+using MonoGame.Extended.Collisions.Layers;
 
-namespace Collision
+namespace Collision;
+
+public class Game1 : Game
 {
-    public class Game1 : Game
+    private const int MapWidth = 500;
+    private const int MapHeight = 500;
+    private static readonly BoundingBox2D WorldBounds = BoundingBox2D.CreateFromPositionAndSize(Vector2.Zero, new Vector2(MapWidth, MapHeight));
+
+    private readonly GraphicsDeviceManager _graphics;
+    private readonly List<IEntity> _entities = new();
+    private readonly CollisionWorld2D _collisionWorld;
+    private SpriteBatch _spriteBatch = null!;
+
+    public Game1()
     {
-        // Monogame core related
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = MapWidth;
+        _graphics.PreferredBackBufferHeight = MapHeight;
 
-        // Monogame.Extended.Collisions example related
-        private readonly List<IEntity> _entities = new List<IEntity>();
-        private readonly CollisionComponent _collisionComponent;
-        const int MapWidth = 500;
-        const int MapHeight = 500;
+        Content.RootDirectory = "Content";
+        IsMouseVisible = true;
 
-        public Game1()
+        _collisionWorld = new CollisionWorld2D(new Layer(new SpatialHash(new SizeF(64f, 64f))));
+    }
+
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        for (int i = 0; i < 50; i++)
         {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            float size = Random.Shared.Next(20, 40);
+            Vector2 position = new Vector2(
+                Random.Shared.Next(0, MapWidth),
+                Random.Shared.Next(0, MapHeight));
 
-            // Monogame.Extended.Collisions example related
-            _collisionComponent = new CollisionComponent(new RectangleF(0, 0, MapWidth, MapHeight));
+            IEntity entity = i % 2 == 0
+                ? new BallEntity(i + 1, new BoundingCircle2D(position, size * 0.5f))
+                : new CubeEntity(i + 1, BoundingBox2D.CreateFromCenterAndExtents(position, new Vector2(size * 0.5f)));
+
+            _entities.Add(entity);
+            _collisionWorld.Insert(entity);
+        }
+    }
+
+    protected override void LoadContent()
+    {
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
+    }
+
+    protected override void Update(GameTime gameTime)
+    {
+        KeyboardState keyboardState = Keyboard.GetState();
+        GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
+
+        if (gamePadState.Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
+        {
+            Exit();
         }
 
-        protected override void Initialize()
+        foreach (IEntity entity in _entities)
         {
-            base.Initialize();
-
-            // Create some objects to use in the collision demo
-            for (var i = 0; i < 50; i++)
-            {
-                var size = Random.Shared.Next(20, 40);
-                var position = new Vector2(Random.Shared.Next(-MapWidth, MapWidth * 2), Random.Shared.Next(0, MapHeight));
-                if (i % 2 == 0)
-                {
-                    _entities.Add(new BallEntity(new CircleF(position, size)));
-                }
-                else
-                {
-                    _entities.Add(new CubeEntity(new RectangleF(position, new SizeF(size, size))));
-                }
-            }
-
-            // Add those objects to the collisionComponent so it will do the collision checking for us
-            foreach (IEntity entity in _entities)
-            {
-                _collisionComponent.Insert(entity);
-            }
+            entity.Update(gameTime, WorldBounds);
         }
 
-        protected override void LoadContent()
-        {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _collisionWorld.RebuildDynamicLayers();
 
-            // TODO: use this.Content to load your game content here
+        foreach (CollisionPair2D collisionPair in _collisionWorld.QueryCollisionPairs(null, null))
+        {
+            IEntity first = (IEntity)collisionPair.First;
+            IEntity second = (IEntity)collisionPair.Second;
+            Vector2 separation = collisionPair.FirstResult.MinimumTranslationVector * 0.5f;
+
+            first.Move(separation);
+            second.Move(-separation);
+            first.Bounce();
+            second.Bounce();
         }
 
-        protected override void Update(GameTime gameTime)
+        base.Update(gameTime);
+    }
+
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.CornflowerBlue);
+
+        _spriteBatch.Begin();
+        _spriteBatch.DrawRectangle(0, 0, MapWidth, MapHeight, Color.White, 2f);
+
+        foreach (IEntity entity in _entities)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // Make sure each entity moves around the screen
-            foreach (IEntity entity in _entities)
-            {
-                entity.Update(gameTime);
-            }
-
-            // Make sure all collisions are detected and the OnCollision event for each is called
-            _collisionComponent.Update(gameTime);
-
-            base.Update(gameTime);
+            entity.Draw(_spriteBatch);
         }
 
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+        _spriteBatch.End();
 
-            // Draw all the entities
-            _spriteBatch.Begin();
-            foreach (IEntity entity in _entities)
-            {
-                entity.Draw(_spriteBatch);
-            }
-
-            _spriteBatch.End();
-
-            base.Draw(gameTime);
-        }
+        base.Draw(gameTime);
     }
 }

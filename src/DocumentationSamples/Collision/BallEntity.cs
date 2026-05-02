@@ -1,51 +1,101 @@
-﻿// Copyright (c) Craftwork Games. All rights reserved.
+// Copyright (c) Craftwork Games. All rights reserved.
 // Licensed under the MIT license.
 // See LICENSE file in the project root for full license information.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using MonoGame.Extended.Collisions;
+using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace Collision
+namespace Collision;
+
+public class BallEntity : IEntity
 {
-    public class BallEntity : IEntity
+    private BoundingCircle2D _bounds;
+    private Vector2 _velocity;
+
+    public BallEntity(int id, BoundingCircle2D bounds)
     {
-        public Vector2 Velocity;
-        public IShapeF Bounds { get; }
+        Id = id;
+        _bounds = bounds;
+        RandomizeVelocity();
+    }
 
-        public BallEntity(CircleF circleF)
+    public int Id { get; }
+
+    public CollisionShape2D Shape => new(_bounds);
+
+    public void Update(GameTime gameTime, BoundingBox2D worldBounds)
+    {
+        _bounds = _bounds.Translate(_velocity * gameTime.GetElapsedSeconds() * 80f);
+        ConstrainToWorld(worldBounds);
+    }
+
+    public void Move(Vector2 translation)
+    {
+        _bounds = _bounds.Translate(translation);
+    }
+
+    public void Bounce()
+    {
+        _velocity *= -1f;
+
+        if (_velocity == Vector2.Zero)
         {
-            Bounds = circleF;
             RandomizeVelocity();
         }
+    }
 
-        public void Draw(SpriteBatch spriteBatch)
+    public void Draw(SpriteBatch spriteBatch)
+    {
+        spriteBatch.DrawCircle(_bounds.Center, _bounds.Radius, 16, Color.Red, 3f);
+    }
+
+    private void ConstrainToWorld(BoundingBox2D worldBounds)
+    {
+        Vector2 position = _bounds.Center;
+        bool bounced = false;
+
+        if (position.X - _bounds.Radius < worldBounds.Min.X)
         {
-            spriteBatch.DrawCircle((CircleF)Bounds, 8, Color.Red, 3f);
+            position.X = worldBounds.Min.X + _bounds.Radius;
+            _velocity.X *= -1f;
+            bounced = true;
+        }
+        else if (position.X + _bounds.Radius > worldBounds.Max.X)
+        {
+            position.X = worldBounds.Max.X - _bounds.Radius;
+            _velocity.X *= -1f;
+            bounced = true;
         }
 
-        public void Update(GameTime gameTime)
+        if (position.Y - _bounds.Radius < worldBounds.Min.Y)
         {
-            Bounds.Position += Velocity * gameTime.GetElapsedSeconds() * 30;
+            position.Y = worldBounds.Min.Y + _bounds.Radius;
+            _velocity.Y *= -1f;
+            bounced = true;
+        }
+        else if (position.Y + _bounds.Radius > worldBounds.Max.Y)
+        {
+            position.Y = worldBounds.Max.Y - _bounds.Radius;
+            _velocity.Y *= -1f;
+            bounced = true;
         }
 
-        public void OnCollision(CollisionEventArgs collisionInfo)
+        _bounds.Center = position;
+
+        if (bounced && _velocity == Vector2.Zero)
         {
             RandomizeVelocity();
-            Bounds.Position -= collisionInfo.PenetrationVector;
         }
+    }
 
-
-        private void RandomizeVelocity()
+    private void RandomizeVelocity()
+    {
+        do
         {
-            Velocity.X = Random.Shared.Next(-1, 2);
-            Velocity.Y = Random.Shared.Next(-1, 2);
+            _velocity = new Vector2(Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2));
         }
+        while (_velocity == Vector2.Zero);
     }
 }

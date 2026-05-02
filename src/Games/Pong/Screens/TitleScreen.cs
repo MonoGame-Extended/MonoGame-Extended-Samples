@@ -34,7 +34,7 @@ namespace Pong.Screens
                 Game.Exit();
 
             if (mouseState.LeftButton == ButtonState.Pressed || keyboardState.WasAnyKeyJustDown())
-                ScreenManager.LoadScreen(new PongGameScreen(Game), new FadeTransition(GraphicsDevice, Color.Black, 0.5f));
+                ScreenManager.ReplaceScreen(new PongGameScreen(Game), new FadeTransition(GraphicsDevice, Color.Black, 0.5f));
         }
 
         public override void Draw(GameTime gameTime)

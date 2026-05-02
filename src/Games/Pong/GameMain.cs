@@ -34,7 +34,7 @@ namespace Pong
         {
             base.LoadContent();
 
-            _screenManager.LoadScreen(new TitleScreen(this), new FadeTransition(GraphicsDevice, Color.Black, 0.5f));
+            _screenManager.ShowScreen(new TitleScreen(this), new FadeTransition(GraphicsDevice, Color.Black, 0.5f));
         }
 
         protected override void Update(GameTime gameTime)

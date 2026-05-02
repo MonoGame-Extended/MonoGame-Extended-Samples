@@ -39,8 +39,8 @@
 /build:hero.png
 
 #begin test-map.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:test-map.tmx
 
 #begin tileset.png
@@ -54,4 +54,5 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:tileset.png
+
 

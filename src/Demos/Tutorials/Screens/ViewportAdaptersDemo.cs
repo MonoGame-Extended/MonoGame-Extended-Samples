@@ -18,7 +18,7 @@ namespace Tutorials.Screens
         private ScalingViewportAdapter _scalingViewportAdapter;
         private SpriteBatch _spriteBatch;
 
-        public GameMain Game => (GameMain)base.Game;
+        public new GameMain Game => (GameMain)base.Game;
 
         public ViewportAdaptersScreen(GameMain game) : base(game) { }
 

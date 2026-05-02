@@ -454,43 +454,43 @@
 /build:TiledMaps/L05TS1.png
 
 #begin TiledMaps/level01.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level01.tmx
 
 #begin TiledMaps/level02.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level02.tmx
 
 #begin TiledMaps/level03.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level03.tmx
 
 #begin TiledMaps/level04.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level04.tmx
 
 #begin TiledMaps/level05.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level05.tmx
 
 #begin TiledMaps/level06.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level06.tmx
 
 #begin TiledMaps/level07.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level07.tmx
 
 #begin TiledMaps/level08.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
+/importer:TiledTilemapImporter
+/processor:TilemapProcessor
 /build:TiledMaps/level08.tmx
 
 #begin TiledMaps/non-uniform-tileset.png
@@ -540,4 +540,5 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:TiledMaps/voxelTiles_sheet.png
+
 
