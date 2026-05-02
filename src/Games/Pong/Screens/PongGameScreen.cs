@@ -79,7 +79,7 @@ namespace Pong.Screens
             var keyboardState = KeyboardExtended.GetState();
 
             if (keyboardState.WasKeyReleased(Keys.Escape))
-                ScreenManager.LoadScreen(new TitleScreen(Game), new ExpandTransition(GraphicsDevice, Color.Black));
+                ScreenManager.ReplaceScreen(new TitleScreen(Game), new ExpandTransition(GraphicsDevice, Color.Black));
 
             MovePaddlePlayer(mouseState);
 
@@ -216,9 +216,6 @@ namespace Pong.Screens
         {
             const float difficulty = 0.80f;
             var paddleSpeed = Math.Abs(_ball.Velocity.Y) * difficulty;
-
-            if (paddleSpeed < 0)
-                paddleSpeed = -paddleSpeed;
 
             //ball moving down
             if (_ball.Velocity.Y > 0)

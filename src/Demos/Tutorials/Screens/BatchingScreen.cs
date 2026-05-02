@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended;
 using MonoGame.Extended.BitmapFonts;
-using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Graphics.Effects;
 using MonoGame.Extended.Screens;
 
@@ -22,7 +21,6 @@ namespace Tutorials.Screens
 
     public class BatchingScreen : GameScreen
     {
-        private Batcher2D _batcher;
         private SpriteBatch _spriteBatch;
         private BitmapFont _bitmapFont;
         private Texture2D _spriteTexture1;
@@ -62,7 +60,6 @@ namespace Tutorials.Screens
                 TextureEnabled = true,
                 VertexColorEnabled = true
             };
-            _batcher = new Batcher2D(graphicsDevice);
             _spriteBatch = new SpriteBatch(graphicsDevice);
             _bitmapFont = Content.Load<BitmapFont>("Fonts/montserrat-32");
 
@@ -106,7 +103,7 @@ namespace Tutorials.Screens
                 else
                     sprite.Rotation = (sprite.Rotation - MathHelper.ToRadians(0.5f) + MathHelper.TwoPi) % MathHelper.TwoPi;
 
-                sprite.Color = ColorHelper.FromHsl(sprite.Rotation / MathHelper.TwoPi, 0.5f, 0.3f);
+                sprite.Color = HslColor.ToRgb(new HslColor(sprite.Rotation / MathHelper.TwoPi, 0.5f, 0.3f));
 
                 sprite.TransformMatrix = Matrix3x2.CreateFrom(sprite.Position, sprite.Rotation, _spriteScale, _spriteOrigin);
 
@@ -125,24 +122,7 @@ namespace Tutorials.Screens
             _viewMatrix = _effect.View = Matrix.Identity;
             _projectionMatrix = _effect.Projection = Matrix.CreateOrthographicOffCenter(0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, 0, 0, -1);
 
-            // comment and uncomment either of the two below lines to compare
-
-            DrawSpritesWithBatcher2D();
-            //DrawSpritesWithSpriteBatch();
-        }
-
-        private void DrawSpritesWithBatcher2D()
-        {
-            _batcher.Begin(_viewMatrix, _projectionMatrix, effect: _effect);
-
-            // ReSharper disable once ForCanBeConvertedToForeach
-            for (var index = 0; index < _sprites.Length; index++)
-            {
-                var sprite = _sprites[index];
-                _batcher.DrawTexture(sprite.Texture, ref sprite.TransformMatrix, sprite.Color);
-            }
-
-            _batcher.End();
+            DrawSpritesWithSpriteBatch();
         }
 
         private void DrawSpritesWithSpriteBatch()

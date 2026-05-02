@@ -124,8 +124,8 @@ namespace Tutorials.Demos
                                 {
                                     new ColorInterpolator()
                                     {
-                                        StartValue = new Vector3(0.33f, 0.5f, 0.5f),
-                                        EndValue = new Vector3(0.5f, 0.9f, 1.0f)
+                                        StartValue = new HslColor(0.33f, 0.5f, 0.5f),
+                                        EndValue = new HslColor(0.5f, 0.9f, 1.0f)
                                     }
                                 }
                             },

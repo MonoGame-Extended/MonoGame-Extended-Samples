@@ -1,0 +1,26 @@
+{
+	"maps": [
+		{ "fileName": "0001_Entrance.tmx", "x": 0, "y": 0 },
+		{ "fileName": "0002_Cross_roads.tmx", "x": 0, "y": 256 },
+		{ "fileName": "0003_Ossuary.tmx", "x": -1024, "y": 0 },
+		{ "fileName": "0004_Water_supply.tmx", "x": -512, "y": 0 },
+		{ "fileName": "0005_Sewers2.tmx", "x": 256, "y": 1024 },
+		{ "fileName": "0006_Sewers_trash.tmx", "x": 256, "y": 1536 },
+		{ "fileName": "0007_Boss_room.tmx", "x": 1536, "y": 512 },
+		{ "fileName": "0008_Large_water.tmx", "x": 1024, "y": -256 },
+		{ "fileName": "0009_Shop.tmx", "x": 256, "y": 0 },
+		{ "fileName": "0010_Sewers1.tmx", "x": 512, "y": 512 },
+		{ "fileName": "0011_The_ponds.tmx", "x": 768, "y": 768 },
+		{ "fileName": "0012_Pit.tmx", "x": 768, "y": 256 },
+		{ "fileName": "0013_The_tower.tmx", "x": 1536, "y": -256 },
+		{ "fileName": "0014_Garden.tmx", "x": 512, "y": -256 },
+		{ "fileName": "0015_SaveRoom.tmx", "x": 1024, "y": 256 },
+		{ "fileName": "0016_Flooded_rooms.tmx", "x": 1024, "y": 1024 },
+		{ "fileName": "0017_Long_hallway.tmx", "x": 1536, "y": 256 },
+		{ "fileName": "0018_Exit.tmx", "x": 2816, "y": 0 },
+		{ "fileName": "0019_Hidden_cave.tmx", "x": 1280, "y": 256 },
+		{ "fileName": "0020_Shop_entrance.tmx", "x": 512, "y": 256 },
+		{ "fileName": "0021_Shortcut_passage.tmx", "x": 512, "y": 768 }
+	],
+	"type": "world"
+}

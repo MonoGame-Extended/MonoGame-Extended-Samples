@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/SingleTilemaps/">
+    <Project Path="SingleTilemaps/LDtkDemoSample/LDtkDemoSample.csproj" />
+    <Project Path="SingleTilemaps/OgmoDemoSample/OgmoDemoSample.csproj" />
+    <Project Path="SingleTilemaps/TiledDemoSample/TiledDemoSample.csproj" />
+  </Folder>
+  <Folder Name="/WorldMaps/">
+    <Project Path="WorldMaps/LDtkWorldMapSample/LDtkWorldMapSample.csproj" />
+    <Project Path="WorldMaps/TiledWorldMapSample/TiledWorldMapSample.csproj" />
+  </Folder>
+  <Project Path="DemoGame.Shared/DemoGame.Shared.csproj" />
+</Solution>

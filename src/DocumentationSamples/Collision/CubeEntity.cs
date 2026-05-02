@@ -1,51 +1,104 @@
-﻿// Copyright (c) Craftwork Games. All rights reserved.
+// Copyright (c) Craftwork Games. All rights reserved.
 // Licensed under the MIT license.
 // See LICENSE file in the project root for full license information.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using MonoGame.Extended.Collisions;
+using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 
-namespace Collision
-{
-    public class CubeEntity : IEntity
-    {
-        public Vector2 Velocity;
-        public IShapeF Bounds { get; }
+namespace Collision;
 
-        public CubeEntity(RectangleF rectangleF)
+public class CubeEntity : IEntity
+{
+    private BoundingBox2D _bounds;
+    private Vector2 _velocity;
+
+    public CubeEntity(int id, BoundingBox2D bounds)
+    {
+        Id = id;
+        _bounds = bounds;
+        RandomizeVelocity();
+    }
+
+    public int Id { get; }
+
+    public CollisionShape2D Shape => new(_bounds);
+
+    public void Update(GameTime gameTime, BoundingBox2D worldBounds)
+    {
+        _bounds = _bounds.Translate(_velocity * gameTime.GetElapsedSeconds() * 100f);
+        ConstrainToWorld(worldBounds);
+    }
+
+    public void Move(Vector2 translation)
+    {
+        _bounds = _bounds.Translate(translation);
+    }
+
+    public void Bounce()
+    {
+        _velocity *= -1f;
+
+        if (_velocity == Vector2.Zero)
         {
-            Bounds = rectangleF;
             RandomizeVelocity();
         }
+    }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+    public void Draw(SpriteBatch spriteBatch)
+    {
+        spriteBatch.DrawRectangle(_bounds.Min, new SizeF(_bounds.Width, _bounds.Height), Color.Red, 3f);
+    }
+
+    private void ConstrainToWorld(BoundingBox2D worldBounds)
+    {
+        Vector2 translation = Vector2.Zero;
+        bool bounced = false;
+
+        if (_bounds.Min.X < worldBounds.Min.X)
         {
-            spriteBatch.DrawRectangle((RectangleF)Bounds, Color.Red, 3);
+            translation.X = worldBounds.Min.X - _bounds.Min.X;
+            _velocity.X *= -1f;
+            bounced = true;
+        }
+        else if (_bounds.Max.X > worldBounds.Max.X)
+        {
+            translation.X = worldBounds.Max.X - _bounds.Max.X;
+            _velocity.X *= -1f;
+            bounced = true;
         }
 
-        public virtual void Update(GameTime gameTime)
+        if (_bounds.Min.Y < worldBounds.Min.Y)
         {
-            Bounds.Position += Velocity * gameTime.GetElapsedSeconds() * 50;
+            translation.Y = worldBounds.Min.Y - _bounds.Min.Y;
+            _velocity.Y *= -1f;
+            bounced = true;
+        }
+        else if (_bounds.Max.Y > worldBounds.Max.Y)
+        {
+            translation.Y = worldBounds.Max.Y - _bounds.Max.Y;
+            _velocity.Y *= -1f;
+            bounced = true;
         }
 
-        public void OnCollision(CollisionEventArgs collisionInfo)
+        if (translation != Vector2.Zero)
         {
-            Velocity.X *= -1;
-            Velocity.Y *= -1;
-            Bounds.Position -= collisionInfo.PenetrationVector;
+            _bounds = _bounds.Translate(translation);
         }
 
-        private void RandomizeVelocity()
+        if (bounced && _velocity == Vector2.Zero)
         {
-            Velocity.X = Random.Shared.Next(-1, 2);
-            Velocity.Y = Random.Shared.Next(-1, 2);
+            RandomizeVelocity();
         }
+    }
+
+    private void RandomizeVelocity()
+    {
+        do
+        {
+            _velocity = new Vector2(Random.Shared.Next(-1, 2), Random.Shared.Next(-1, 2));
+        }
+        while (_velocity == Vector2.Zero);
     }
 }
