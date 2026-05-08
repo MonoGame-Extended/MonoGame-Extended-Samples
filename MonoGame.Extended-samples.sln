@@ -53,6 +53,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContentExtensions", "Conten
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContentExtensions", "src\DocumentationSamples\ContentExtensions\ContentExtensions\ContentExtensions.csproj", "{FEA7C5F6-EA72-4D23-AAEA-2B31205181C6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{5D32BF7E-6BC6-40D7-B096-252C314A9BF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +127,10 @@ Global
 		{FEA7C5F6-EA72-4D23-AAEA-2B31205181C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA7C5F6-EA72-4D23-AAEA-2B31205181C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEA7C5F6-EA72-4D23-AAEA-2B31205181C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D32BF7E-6BC6-40D7-B096-252C314A9BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D32BF7E-6BC6-40D7-B096-252C314A9BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D32BF7E-6BC6-40D7-B096-252C314A9BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D32BF7E-6BC6-40D7-B096-252C314A9BF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +158,8 @@ Global
 		{9E7441B7-539B-45A0-AC65-2B23097DCD52} = {3ED12876-375C-40EB-97DD-6872772E8214}
 		{3408DEA0-FFA4-4924-943C-C5312FAD16E7} = {5993EF4F-31DC-4920-8795-716D27633844}
 		{FEA7C5F6-EA72-4D23-AAEA-2B31205181C6} = {3408DEA0-FFA4-4924-943C-C5312FAD16E7}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {5993EF4F-31DC-4920-8795-716D27633844}
+		{5D32BF7E-6BC6-40D7-B096-252C314A9BF6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {814BEBFB-DA17-4C73-A47F-2AE2164B990F}
